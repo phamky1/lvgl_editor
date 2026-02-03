@@ -22,7 +22,6 @@
 			<style name="checkbox_style" />
 			<bind_style subject="dark_theme" ref_value="1" name="checkbox_dark" />
 			<bind_style_if_eq subject="$is_completed" ref_value="1" name="checkbox_checked" />
-			<bind_style subject="dark_theme" ref_value="1" name="checkbox_checked_dark" condition="$is_completed == 1" />
 		</lv_obj>
 		
 		<!-- Task text -->
