@@ -30,6 +30,7 @@
 			<light_temperature />
 			<music_player />
 			<speaker_volume />
+			<todo_list />
 		</div>
 	</view>
 </screen>

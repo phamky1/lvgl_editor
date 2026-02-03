@@ -1,0 +1,100 @@
+<component>
+	<previews>
+		<preview width="320" height="480" />
+	</previews>
+
+	<styles>
+		<style name="panel_light" bg_color="#accent2_50_light" />
+		<style name="panel_dark" bg_color="#accent2_50_dark" />
+		<style name="divider" height="1" bg_color="#surface_primary_light" bg_opa="20%" width="100%" />
+		<style name="divider_dark" bg_color="#surface_primary_dark" />
+		<style name="add_button_style" 
+			width="100%" 
+			pad_all="#unit_md" 
+			bg_opa="0" 
+			text_font="geist_regular_14" 
+			text_color="#surface_primary_light" 
+			text_opa="60%" 
+			radius="#unit_md"
+		/>
+		<style name="add_button_dark" text_color="#surface_primary_dark" />
+		<style name="add_button_pressed" bg_opa="10%" />
+	</styles>
+
+	<view extends="card">
+		<style name="panel_light" />
+		<bind_style subject="dark_theme" name="panel_dark" ref_value="1" />
+
+		<card_header title="Todo List" />
+
+		<!-- Todo Items -->
+		<column width="100%">
+			<!-- Task 1 -->
+			<lv_obj width="100%" height="content" layout="flex" flex_flow="row" flex_cross_place="center" style_pad_ver="#unit_md" style_pad_hor="#unit_md" style_bg_opa="0">
+				<lv_checkbox bind_checked="todo_task1_done" />
+				<lv_label text="Review pull requests" flex_grow="1" style_pad_left="#unit_md" style_text_font="geist_regular_14">
+					<bind_style_if_eq subject="todo_task1_done" ref_value="1" name="style_disabled" />
+				</lv_label>
+			</lv_obj>
+			
+			<lv_obj>
+				<style name="divider" />
+				<bind_style subject="dark_theme" ref_value="1" name="divider_dark" />
+			</lv_obj>
+
+			<!-- Task 2 -->
+			<lv_obj width="100%" height="content" layout="flex" flex_flow="row" flex_cross_place="center" style_pad_ver="#unit_md" style_pad_hor="#unit_md" style_bg_opa="0">
+				<lv_checkbox bind_checked="todo_task2_done" />
+				<lv_label text="Update documentation" flex_grow="1" style_pad_left="#unit_md" style_text_font="geist_regular_14">
+					<bind_style_if_eq subject="todo_task2_done" ref_value="1" name="style_disabled" />
+				</lv_label>
+			</lv_obj>
+			
+			<lv_obj>
+				<style name="divider" />
+				<bind_style subject="dark_theme" ref_value="1" name="divider_dark" />
+			</lv_obj>
+
+			<!-- Task 3 -->
+			<lv_obj width="100%" height="content" layout="flex" flex_flow="row" flex_cross_place="center" style_pad_ver="#unit_md" style_pad_hor="#unit_md" style_bg_opa="0">
+				<lv_checkbox bind_checked="todo_task3_done" />
+				<lv_label text="Fix reported bugs" flex_grow="1" style_pad_left="#unit_md" style_text_font="geist_regular_14">
+					<bind_style_if_eq subject="todo_task3_done" ref_value="1" name="style_disabled" />
+				</lv_label>
+			</lv_obj>
+			
+			<lv_obj>
+				<style name="divider" />
+				<bind_style subject="dark_theme" ref_value="1" name="divider_dark" />
+			</lv_obj>
+
+			<!-- Task 4 -->
+			<lv_obj width="100%" height="content" layout="flex" flex_flow="row" flex_cross_place="center" style_pad_ver="#unit_md" style_pad_hor="#unit_md" style_bg_opa="0">
+				<lv_checkbox bind_checked="todo_task4_done" />
+				<lv_label text="Prepare release notes" flex_grow="1" style_pad_left="#unit_md" style_text_font="geist_regular_14">
+					<bind_style_if_eq subject="todo_task4_done" ref_value="1" name="style_disabled" />
+				</lv_label>
+			</lv_obj>
+			
+			<lv_obj>
+				<style name="divider" />
+				<bind_style subject="dark_theme" ref_value="1" name="divider_dark" />
+			</lv_obj>
+
+			<!-- Task 5 -->
+			<lv_obj width="100%" height="content" layout="flex" flex_flow="row" flex_cross_place="center" style_pad_ver="#unit_md" style_pad_hor="#unit_md" style_bg_opa="0">
+				<lv_checkbox bind_checked="todo_task5_done" />
+				<lv_label text="Test on target device" flex_grow="1" style_pad_left="#unit_md" style_text_font="geist_regular_14">
+					<bind_style_if_eq subject="todo_task5_done" ref_value="1" name="style_disabled" />
+				</lv_label>
+			</lv_obj>
+		</column>
+
+		<!-- Progress indicator -->
+		<row width="100%" style_flex_main_place="center" style_pad_top="#unit_md">
+			<lv_label style_text_font="geist_semibold_12" style_text_opa="60%">
+				<bind_text subject="todo_completed_count" bind_text-fmt="%d of 5 completed" />
+			</lv_label>
+		</row>
+	</view>
+</component>
