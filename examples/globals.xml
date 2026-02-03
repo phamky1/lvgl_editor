@@ -63,6 +63,13 @@
 		<int name="song_played" value="130" />
 		<int name="song_liked" value="0" />
 		<int name="song_playing" value="0" />
+
+		<int name="todo_task1_done" value="0" help="0:not done, 1:done" />
+		<int name="todo_task2_done" value="1" help="0:not done, 1:done" />
+		<int name="todo_task3_done" value="0" help="0:not done, 1:done" />
+		<int name="todo_task4_done" value="0" help="0:not done, 1:done" />
+		<int name="todo_task5_done" value="0" help="0:not done, 1:done" />
+		<int name="todo_completed_count" value="1" help="Number of completed tasks" />
 	</subjects>
 
 	<images>

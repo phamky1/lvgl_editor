@@ -1,0 +1,33 @@
+<component>
+	<api>
+		<prop name="task_text" type="string" default="Task" help="The text of the todo item" />
+		<prop name="is_completed" type="int" default="0" help="0: not completed, 1: completed" />
+	</api>
+
+	<styles>
+		<style name="item_container" width="100%" pad_ver="#unit_md" pad_hor="#unit_md" bg_opa="0" layout="flex" flex_flow="row" flex_cross_place="center" />
+		<style name="checkbox_style" width="20" height="20" radius="4" border_width="2" border_color="#surface_primary_light" border_opa="50%" bg_opa="0" />
+		<style name="checkbox_checked" bg_color="#surface_primary_light" bg_opa="100%" />
+		<style name="checkbox_dark" border_color="#surface_primary_dark" />
+		<style name="checkbox_checked_dark" bg_color="#surface_primary_dark" />
+		<style name="text_completed" text_decor="strikethrough" text_opa="50%" />
+		<style name="text_normal" text_font="geist_regular_14" pad_left="#unit_md" />
+	</styles>
+
+	<view>
+		<style name="item_container" />
+		
+		<!-- Checkbox -->
+		<lv_obj name="checkbox" width="20" height="20">
+			<style name="checkbox_style" />
+			<bind_style subject="dark_theme" ref_value="1" name="checkbox_dark" />
+			<bind_style_if_eq subject="$is_completed" ref_value="1" name="checkbox_checked" />
+		</lv_obj>
+		
+		<!-- Task text -->
+		<lv_label text="$task_text" flex_grow="1">
+			<style name="text_normal" />
+			<bind_style_if_eq subject="$is_completed" ref_value="1" name="text_completed" />
+		</lv_label>
+	</view>
+</component>

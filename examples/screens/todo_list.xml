@@ -11,25 +11,13 @@
 			<bind_style subject="dark_theme" name="style_light" ref_value="0" />
 			<bind_style subject="dark_theme" name="style_dark" ref_value="1" />
 			<theme_switcher flex_grow="1" />
-			<button label="Play Animation" width="content">
-				<play_timeline_event target="alarm_0" timeline="open" />
-			</button>
 		</row>
 
 		<div
 			flex_grow="1"
-			scroll_snap_y="center"
-			scroll_one="true"
 			style_flex_track_place="center"
-			style_pad_row="#unit_xl"
+			style_pad_all="#unit_xl"
 		>
-			<alarm />
-			<thermostat />
-			<move_goal />
-			<weather />
-			<light_temperature />
-			<music_player />
-			<speaker_volume />
 			<todo_list />
 		</div>
 	</view>
